@@ -32,8 +32,9 @@ const Home = () => {
         <h2 className="text-2xl font-bold mb-4">Welcome to the Home Page!</h2>
         {userData ? (
           <div>
-            <h3 className="text-lg font-semibold">User Details:</h3>
-            <pre className="text-sm">{JSON.stringify(userData, null, 2)}</pre>
+            <pre className="text-sm">
+              {JSON.parse(JSON.stringify(userData, null, 2)).emailAddress}
+            </pre>
           </div>
         ) : (
           <p>No user data available.</p>
